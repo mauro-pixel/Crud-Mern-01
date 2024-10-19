@@ -17,7 +17,10 @@ app.use(cors({ origin: "*" }));
 
 app.use("/api/products", ProductRoute);
 
-app.listen(8000, () => {
+
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
   connectDB();
-  console.log(`Servidor iniciado en http://localhost:8000`);
+  console.log(`Servidor iniciado en http://localhost:${PORT}`);
 });
